@@ -7,4 +7,5 @@ RUN apt-get update \
  
 ADD wrapper.sh /wrapper.sh
 
-ENTRYPOINT /wrapper.sh
+ENTRYPOINT ["/wrapper.sh"]
+CMD []
