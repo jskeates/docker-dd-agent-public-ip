@@ -1,6 +1,8 @@
 #!/bin/bash
 
+echo "Fetching public IP..."
 EXTERNAL_IP=$(curl ifconfig.me/ip)
-export KUBERNETES_KUBELET_HOST=${EXTERNAL_IP}
+echo "Public IP of this node is ${EXTERNAL_IP}"
 
-/entrypoint.sh
+echo "Starting dd-agent..."
+KUBERNETES_KUBELET_HOST=${EXTERNAL_IP} /bin/bash /entrypoint.sh

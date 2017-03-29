@@ -7,4 +7,4 @@ RUN apt-get update \
  
 ADD wrapper.sh /wrapper.sh
 
-ENTRYPOINT bash /wrapper.sh
+ENTRYPOINT /wrapper.sh
